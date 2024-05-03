@@ -1,8 +1,7 @@
 #!/usr/bin/env ruby
 
-require_relative '../lib/card'
-require_relative '../lib/hand'
+require_relative '../lib/poker'
 
 # ./bin/play 2h 5d Qs Qd Qc
 h = Hand.new(ARGV[0], ARGV[1], ARGV[2], ARGV[3], ARGV[4])
-puts h.cards.inspect
+puts Rules.new(h).best_hand
